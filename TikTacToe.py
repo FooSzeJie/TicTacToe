@@ -8,12 +8,12 @@ class TikTacToe:
         }
 
     def print_tile(self): 
-        # Print the current state of the board
-        print(self.ttt['top-l'], '|', self.ttt['top-c'], '|', self.ttt['top-r'])
-        print('- + - + -')
-        print(self.ttt['mid-l'], '|', self.ttt['mid-c'], '|', self.ttt['mid-r'])
-        print('- + - + -')
-        print(self.ttt['bot-l'], '|', self.ttt['bot-c'], '|', self.ttt['bot-r'])
+        # Print the current state of the board with a more visually appealing layout
+        print(f"{self.ttt['top-l'] or ' '} | {self.ttt['top-c'] or ' '} | {self.ttt['top-r'] or ' '}")
+        print("--+---+--")
+        print(f"{self.ttt['mid-l'] or ' '} | {self.ttt['mid-c'] or ' '} | {self.ttt['mid-r'] or ' '}")
+        print("--+---+--")
+        print(f"{self.ttt['bot-l'] or ' '} | {self.ttt['bot-c'] or ' '} | {self.ttt['bot-r'] or ' '}")
 
     def PlayerSymbol(self, player1):
         # Determine the symbol for player 2 based on player 1's choice
@@ -124,7 +124,7 @@ class TikTacToe:
             (self.ttt['top-l'] == player1 and self.ttt['mid-c'] == player1 and self.ttt['bot-r'] == player1) or
             (self.ttt['top-r'] == player1 and self.ttt['mid-c'] == player1 and self.ttt['bot-l'] == player1)
            ):
-            print('Player 1 is Winner!')
+            print('\nPlayer 1 is Winner!')
             return True
 
         # Player 2 Win condition
@@ -138,7 +138,7 @@ class TikTacToe:
             (self.ttt['top-l'] == player2 and self.ttt['mid-c'] == player2 and self.ttt['bot-r'] == player2) or
             (self.ttt['top-r'] == player2 and self.ttt['mid-c'] == player2 and self.ttt['bot-l'] == player2)
         ):
-            print('Player 2 is the Winner!')
+            print('\nPlayer 2 is the Winner!')
             return True
 
          # Draw condition
